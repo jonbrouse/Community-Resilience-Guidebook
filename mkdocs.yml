@@ -56,10 +56,6 @@ theme:
     - navigation.instant            # Single-page app feel; faster
     - navigation.instant.progress   # Loading indicator
     - navigation.tracking           # URL updates on scroll
-    - navigation.tabs               # Top-level tabs (optional, looks clean)
-    - navigation.sections           # Group sections in sidebar
-    - navigation.expand             # Auto-expand sidebar sections
-    - navigation.indexes            # Section index pages
     - navigation.top                # Back-to-top button
     - navigation.footer             # Prev/next links at bottom
 
@@ -155,5 +151,5 @@ extra_css:
 # ============================================================
 # Single-page guidebook for now. If you split into multiple
 # pages later, add more entries here.
-nav:
-  - Guidebook: index.md
+#nav:
+#  - Guidebook: index.md

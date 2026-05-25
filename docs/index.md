@@ -4,55 +4,6 @@
 
 **Version {{VERSION}} | Open Source | Adapt Freely**
 
----
-
-## Table of Contents
-
-- [About This Guidebook](#about-this-guidebook)
-  - [How to Use This Document](#how-to-use-this-document)
-  - [A Note on Tone](#a-note-on-tone)
-
-### Part I: Foundations
-- [1. Core Philosophy](#1-core-philosophy)
-- [2. The One-Question Test](#2-the-one-question-test)
-- [3. Acting on Behavior, Not Intent](#3-acting-on-behavior-not-intent)
-
-### Part II: The Moderation Charter
-- [4. Immediate-Removal Offenses](#4-immediate-removal-offenses)
-- [5. Warning-Tier Offenses](#5-warning-tier-offenses)
-- [6. Moderator Rules of Engagement](#6-moderator-rules-of-engagement)
-- [7. Handling Pushback](#7-handling-pushback)
-- [8. Moderator Self-Check Questions](#8-moderator-self-check-questions)
-
-### Part III: Technical Security Controls
-- [9. Platform Configuration Baseline](#9-platform-configuration-baseline)
-- [10. Verification and Onboarding](#10-verification-and-onboarding)
-- [11. Behavioral Monitoring at Scale](#11-behavioral-monitoring-at-scale)
-
-### Part IV: Recognizing Disruption Patterns
-- [12. Bad-Faith Conversation Tactics](#12-bad-faith-conversation-tactics)
-- [13. Movement Disruption Patterns](#13-movement-disruption-patterns)
-- [14. Social Engineering and Infiltration](#14-social-engineering-and-infiltration)
-- [15. The Four Horsemen of Movement Collapse](#15-the-four-horsemen-of-movement-collapse)
-
-### Part V: Structural Defenses
-- [16. Tiered Trust Architecture](#16-tiered-trust-architecture)
-- [17. Decision-Making and Documentation](#17-decision-making-and-documentation)
-- [18. Founder and Vision Protection](#18-founder-and-vision-protection)
-- [19. Compartmentalization](#19-compartmentalization)
-
-### Part VI: Quick Reference
-- [20. Red Flag Behavior Checklist](#20-red-flag-behavior-checklist)
-- [21. Pattern-to-Response Reference Card](#21-pattern-to-response-reference-card)
-- [22. Templates for Common Situations](#22-templates-for-common-situations)
-
-### Appendices
-- [Appendix A: Adapting This Guidebook](#appendix-a-adapting-this-guidebook)
-- [Appendix B: Prior Art and Further Reading](#appendix-b-prior-art-and-further-reading)
-- [Closing](#closing)
-
----
-
 ## About This Guidebook
 
 This guidebook is an open-source reference for anyone running a mission-driven online community. That includes political organizations, advocacy groups, civic forums, professional networks, volunteer coalitions, or any space where people gather around shared purpose.
