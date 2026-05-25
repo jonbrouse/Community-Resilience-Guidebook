@@ -1,0 +1,193 @@
+name: Release
+
+# Runs on push to main (after PR merge).
+# Builds the PDF, deploys the MkDocs site to GitHub Pages,
+# tags the release, and attaches the PDF to a GitHub Release.
+
+on:
+  push:
+    branches: [main]
+
+# Allow only one concurrent deployment
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+jobs:
+  read-version:
+    name: Read version
+    runs-on: ubuntu-latest
+    outputs:
+      version: ${{ steps.version.outputs.version }}
+      tag_exists: ${{ steps.check_tag.outputs.exists }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Read VERSION file
+        id: version
+        run: |
+          VERSION=$(cat VERSION | tr -d '[:space:]')
+          echo "version=$VERSION" >> $GITHUB_OUTPUT
+          echo "Releasing version: $VERSION"
+
+      - name: Check if tag already exists
+        id: check_tag
+        run: |
+          VERSION=${{ steps.version.outputs.version }}
+          if git rev-parse "v$VERSION" >/dev/null 2>&1; then
+            echo "exists=true" >> $GITHUB_OUTPUT
+            echo "Tag v$VERSION already exists, skipping release creation."
+          else
+            echo "exists=false" >> $GITHUB_OUTPUT
+          fi
+
+  build-pdf:
+    name: Build PDF
+    needs: read-version
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install Pandoc and LaTeX
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y pandoc texlive-xetex texlive-fonts-recommended texlive-fonts-extra lmodern
+
+      - name: Substitute version
+        run: |
+          sed -i "s/{{VERSION}}/${{ needs.read-version.outputs.version }}/g" docs/index.md
+
+      - name: Build PDF
+        run: |
+          pandoc docs/index.md \
+            -o Community-Resilience-Guidebook.pdf \
+            --pdf-engine=xelatex \
+            --toc \
+            --toc-depth=2 \
+            -V geometry:margin=1in \
+            -V documentclass=article \
+            -V fontsize=11pt \
+            -V linkcolor=blue \
+            -V mainfont="DejaVu Serif" \
+            -V sansfont="DejaVu Sans" \
+            -V monofont="DejaVu Sans Mono" \
+            --metadata title="The Community Resilience Guidebook" \
+            --metadata subtitle="Version ${{ needs.read-version.outputs.version }}"
+
+      - name: Upload PDF artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: guidebook-pdf
+          path: Community-Resilience-Guidebook.pdf
+          retention-days: 90
+
+  build-site:
+    name: Build MkDocs site
+    needs: [read-version, build-pdf]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: 'pip'
+
+      - name: Install dependencies
+        run: |
+          pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
+
+      - name: Substitute version
+        run: |
+          sed -i "s/{{VERSION}}/${{ needs.read-version.outputs.version }}/g" docs/index.md
+
+      - name: Build site
+        run: mkdocs build --strict
+
+      - name: Download PDF artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: guidebook-pdf
+          path: ./
+
+      - name: Copy PDF into site output
+        run: cp Community-Resilience-Guidebook.pdf site/Community-Resilience-Guidebook.pdf
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./site
+
+  deploy-pages:
+    name: Deploy to GitHub Pages
+    needs: build-site
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
+
+  create-release:
+    name: Create GitHub Release
+    needs: [read-version, build-pdf, deploy-pages]
+    if: needs.read-version.outputs.tag_exists == 'false'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Download PDF artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: guidebook-pdf
+          path: ./
+
+      - name: Extract latest changelog entry
+        id: changelog
+        run: |
+          VERSION=${{ needs.read-version.outputs.version }}
+          awk -v ver="## \\[$VERSION\\]" '
+            $0 ~ ver {found=1; next}
+            found && /^## \[/ {exit}
+            found {print}
+          ' CHANGELOG.md > release_notes.md
+
+          if [ ! -s release_notes.md ]; then
+            echo "Release of version $VERSION." > release_notes.md
+            echo "" >> release_notes.md
+            echo "See [CHANGELOG.md](./CHANGELOG.md) for details." >> release_notes.md
+          fi
+
+          echo "Release notes:"
+          cat release_notes.md
+
+      - name: Create Release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: v${{ needs.read-version.outputs.version }}
+          name: Version ${{ needs.read-version.outputs.version }}
+          body_path: release_notes.md
+          files: |
+            Community-Resilience-Guidebook.pdf
+          draft: false
+          prerelease: false

@@ -1,0 +1,160 @@
+# ============================================================
+# MkDocs Material configuration
+# ============================================================
+# Clean, collapsible sidebar with great reading experience.
+# https://squidfunk.github.io/mkdocs-material/
+
+site_name: The Community Resilience Guidebook
+site_description: >-
+  A field manual for protecting mission-driven communities
+  from disruption and infiltration.
+site_author: The Community Resilience Guidebook contributors
+
+# IMPORTANT: update these after creating your GitHub repo
+site_url: https://YOUR-ORG.github.io/community-resilience-guidebook/
+repo_url: https://github.com/YOUR-ORG/community-resilience-guidebook
+repo_name: YOUR-ORG/community-resilience-guidebook
+edit_uri: edit/main/docs/
+
+# Copyright
+copyright: >-
+  Released under
+  <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>.
+  Open source — adapt freely.
+
+# ============================================================
+# Theme
+# ============================================================
+theme:
+  name: material
+  custom_dir: overrides
+
+  # Sterile, minimal color palette
+  palette:
+    # Light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: black
+      accent: indigo
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to dark mode
+    # Dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: black
+      accent: indigo
+      toggle:
+        icon: material/weather-night
+        name: Switch to light mode
+
+  font:
+    text: Inter
+    code: JetBrains Mono
+
+  features:
+    # Navigation
+    - navigation.instant            # Single-page app feel; faster
+    - navigation.instant.progress   # Loading indicator
+    - navigation.tracking           # URL updates on scroll
+    - navigation.tabs               # Top-level tabs (optional, looks clean)
+    - navigation.sections           # Group sections in sidebar
+    - navigation.expand             # Auto-expand sidebar sections
+    - navigation.indexes            # Section index pages
+    - navigation.top                # Back-to-top button
+    - navigation.footer             # Prev/next links at bottom
+
+    # Table of contents (right-side, follows scroll)
+    - toc.follow
+
+    # Search
+    - search.suggest
+    - search.highlight
+    - search.share
+
+    # Header
+    - header.autohide               # Hide header on scroll
+
+    # Content
+    - content.code.copy             # Copy button on code blocks
+    - content.action.edit           # "Edit this page" button
+    - content.tooltips              # Hover tooltips
+
+  icon:
+    repo: fontawesome/brands/github
+    edit: material/pencil
+    view: material/eye
+
+# ============================================================
+# Markdown extensions
+# ============================================================
+markdown_extensions:
+  # Standard Python-Markdown extensions
+  - abbr
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - md_in_html
+  - tables
+  - toc:
+      permalink: true
+      permalink_title: Anchor link to this section
+      toc_depth: 3
+
+  # PyMdown Extensions (better Markdown)
+  - pymdownx.betterem
+  - pymdownx.caret
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.snippets
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tilde
+
+# ============================================================
+# Plugins
+# ============================================================
+plugins:
+  - search:
+      separator: '[\s\-,:!=\[\]()"`/]+|\.(?!\d)|&[lg]t;|(?!\b)(?=[A-Z][a-z])'
+  - tags
+
+# ============================================================
+# Extra navigation / metadata
+# ============================================================
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/YOUR-ORG/community-resilience-guidebook
+      name: GitHub
+
+  # Show version in the footer
+  version:
+    provider: mike
+    default: latest
+
+# Extra CSS for fine-tuning
+extra_css:
+  - assets/extra.css
+
+# ============================================================
+# Navigation
+# ============================================================
+# Single-page guidebook for now. If you split into multiple
+# pages later, add more entries here.
+nav:
+  - Guidebook: index.md

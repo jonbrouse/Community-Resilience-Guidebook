@@ -1,0 +1,86 @@
+/* ============================================================
+   Extra CSS for the Community Resilience Guidebook
+   Goal: clean, readable, sterile aesthetic
+   ============================================================ */
+
+/* Slightly wider content area for long-form reading */
+.md-grid {
+  max-width: 1440px;
+}
+
+/* Comfortable line length for reading */
+.md-content {
+  max-width: 50rem;
+}
+
+/* Subtle, more serious heading weights */
+.md-typeset h1 {
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  margin-top: 2.5rem;
+}
+
+.md-typeset h2 {
+  font-weight: 600;
+  letter-spacing: -0.005em;
+  margin-top: 2rem;
+  padding-bottom: 0.3rem;
+  border-bottom: 1px solid var(--md-default-fg-color--lightest);
+}
+
+.md-typeset h3 {
+  font-weight: 600;
+  margin-top: 1.5rem;
+}
+
+/* Blockquote styling — make pull quotes feel intentional */
+.md-typeset blockquote {
+  border-left: 3px solid var(--md-accent-fg-color);
+  padding-left: 1.2rem;
+  font-style: italic;
+  color: var(--md-default-fg-color--light);
+}
+
+/* Tables — slightly tighter, more reference-card feel */
+.md-typeset table:not([class]) {
+  font-size: 0.85rem;
+}
+
+.md-typeset table:not([class]) th {
+  background-color: var(--md-default-fg-color);
+  color: var(--md-default-bg-color);
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.md-typeset table:not([class]) tr:nth-child(even) {
+  background-color: var(--md-default-fg-color--lightest);
+}
+
+/* Code blocks — restrained */
+.md-typeset code {
+  font-size: 0.85em;
+  padding: 0.1em 0.35em;
+}
+
+/* Footer — clean and unobtrusive */
+.md-footer {
+  background-color: var(--md-default-fg-color);
+}
+
+.md-footer-meta {
+  background-color: rgba(0, 0, 0, 0.85);
+}
+
+/* Hide the "Made with Material for MkDocs" line if you want
+   (uncomment to enable; legally fine, MIT-licensed theme)
+.md-footer-meta__inner {
+  font-size: 0;
+}
+*/
+
+/* Better hr in the middle of content */
+.md-typeset hr {
+  margin: 2.5rem 0;
+  border-top: 1px solid var(--md-default-fg-color--lighter);
+}
