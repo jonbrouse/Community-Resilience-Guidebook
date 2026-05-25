@@ -27,7 +27,6 @@ copyright: >-
 # ============================================================
 theme:
   name: material
-  custom_dir: overrides
 
   # Sterile, minimal color palette
   palette:
