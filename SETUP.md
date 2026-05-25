@@ -14,16 +14,16 @@ Estimated time: 15 minutes.
    git add .
    git commit -m "Initial commit"
    git branch -M main
-   git remote add origin https://github.com/YOUR-ORG/community-resilience-guidebook.git
+   git remote add origin https://github.com/jonbrouse/community-resilience-guidebook.git
    git push -u origin main
    ```
 
 3. After pushing, update these placeholders throughout the files:
-   - `YOUR-ORG` in `README.md`, `CHANGELOG.md`, and `mkdocs.yml`
+   - `jonbrouse` in `README.md`, `CHANGELOG.md`, and `mkdocs.yml`
    - The `site_url`, `repo_url`, and `repo_name` in `mkdocs.yml`
    - The `social` link in `mkdocs.yml`
 
-   A quick find-and-replace across the repo for `YOUR-ORG` is the easiest way.
+   A quick find-and-replace across the repo for `jonbrouse` is the easiest way.
 
 ## 2. Enable GitHub Pages
 
@@ -34,7 +34,7 @@ Estimated time: 15 minutes.
 Once deployed, the site will be at:
 
 ```
-https://YOUR-ORG.github.io/community-resilience-guidebook/
+https://jonbrouse.github.io/community-resilience-guidebook/
 ```
 
 (Or, for a custom domain, see "Optional: Custom Domain" at the bottom.)
@@ -137,7 +137,7 @@ If you want to host at a custom domain (e.g., `guidebook.example.org`):
 
 2. Configure DNS at your domain registrar:
    - For an apex domain: A records pointing to GitHub's IPs (185.199.108.153, 185.199.109.153, 185.199.110.153, 185.199.111.153)
-   - For a subdomain: CNAME record pointing to `YOUR-ORG.github.io`
+   - For a subdomain: CNAME record pointing to `jonbrouse.github.io`
 
 3. In **Settings → Pages**, under "Custom domain", enter the domain and save
 4. Enable "Enforce HTTPS" once the certificate provisions (a few minutes)

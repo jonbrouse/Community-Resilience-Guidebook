@@ -11,9 +11,9 @@ site_description: >-
 site_author: The Community Resilience Guidebook contributors
 
 # IMPORTANT: update these after creating your GitHub repo
-site_url: https://YOUR-ORG.github.io/community-resilience-guidebook/
-repo_url: https://github.com/YOUR-ORG/community-resilience-guidebook
-repo_name: YOUR-ORG/community-resilience-guidebook
+site_url: https://jonbrouse.github.io/community-resilience-guidebook/
+repo_url: https://github.com/jonbrouse/community-resilience-guidebook
+repo_name: jonbrouse/community-resilience-guidebook
 edit_uri: edit/main/docs/
 
 # Copyright
@@ -139,7 +139,7 @@ plugins:
 extra:
   social:
     - icon: fontawesome/brands/github
-      link: https://github.com/YOUR-ORG/community-resilience-guidebook
+      link: https://github.com/jonbrouse/community-resilience-guidebook
       name: GitHub
 
   # Show version in the footer
