@@ -1,8 +1,14 @@
+---
+hide:
+  - navigation
+---
+
 # The Community Resilience Guidebook
 
 *A field manual for protecting mission-driven communities from disruption and infiltration.*
 
 **Version {{VERSION}} | Open Source | Adapt Freely**
+
 
 ## About This Guidebook
 
@@ -31,11 +37,11 @@ That said: most strange behavior is not malicious. The frameworks here are desig
 
 ---
 
-# Part I: Foundations
+## Part I: Foundations
 
 > *"Every mission-driven community needs a single sentence its members and moderators can return to when things get hard."*
 
-## 1. Core Philosophy
+### 1. Core Philosophy
 
 Every mission-driven community needs a single sentence its members and moderators can return to when things get hard. Without that anchor, every decision becomes a debate, every removal becomes a controversy, and every disagreement becomes existential.
 
@@ -47,7 +53,7 @@ This is not a free-speech playground. This is a curated space with a specific pu
 
 Moderation is not about controlling speech. It's about protecting the conditions under which the mission can actually happen.
 
-## 2. The One-Question Test
+### 2. The One-Question Test
 
 Before taking any moderation action, or letting one slide, ask:
 
@@ -58,7 +64,7 @@ Before taking any moderation action, or letting one slide, ask:
 
 This test outperforms detailed rulebooks because it forces you to think about the community's health rather than the technicalities of a violation. Rulebooks get gamed; mission tests don't.
 
-## 3. Acting on Behavior, Not Intent
+### 3. Acting on Behavior, Not Intent
 
 You will never reliably know whether a disruptive person is a paid operative, an unaffiliated troll, an awkward but well-meaning member, or simply having a bad week. **You don't need to know.**
 
@@ -71,11 +77,11 @@ Patterns matter more than individual posts. A single bad message from a long-tim
 
 ---
 
-# Part II: The Moderation Charter
+## Part II: The Moderation Charter
 
 > *"Act fast, explain later. Community health outweighs individual feelings."*
 
-## 4. Immediate-Removal Offenses
+### 4. Immediate-Removal Offenses
 
 These behaviors get no warning. They fundamentally undermine the mission and create immediate harm:
 
@@ -88,7 +94,7 @@ These behaviors get no warning. They fundamentally undermine the mission and cre
 
 These aren't boundaries to be tested. They're the floor.
 
-## 5. Warning-Tier Offenses
+### 5. Warning-Tier Offenses
 
 These get one warning with a clear explanation. The warning is the only mulligan, use it to recalibrate or use it up.
 
@@ -98,12 +104,12 @@ These get one warning with a clear explanation. The warning is the only mulligan
 - **Sourceless bomb-throwing:** inflammatory claims with no backing.
 - **Dominance behavior:** monopolizing conversations, talking over others consistently.
 
-## 6. Moderator Rules of Engagement
+### 6. Moderator Rules of Engagement
 
-### Act fast, explain later
+#### Act fast, explain later
 Remove the message first; discuss it later if needed. Community health outweighs individual feelings. You can always reinstate; you can't always undo the damage of leaving harmful content up.
 
-### No soft language
+#### No soft language
 When issuing warnings or bans, be clear and direct:
 
 - *Not:* "Hey, I'm not sure this is quite in line with…"
@@ -111,22 +117,22 @@ When issuing warnings or bans, be clear and direct:
 
 Soft language reads as uncertainty, which invites argument. Clear language closes the loop.
 
-### Trust your gut
+#### Trust your gut
 If something feels off, it probably is. You don't need ironclad proof of bad faith to act. The mission-test is sufficient justification.
 
-### Document, don't debate
+#### Document, don't debate
 Keep a moderator log of every action taken: user, behavior, action, rationale. You don't owe bad actors a philosophical discussion about their removal. State the reason once, then disengage.
 
-### Consistency over leniency
+#### Consistency over leniency
 It is better to be consistently firm than inconsistently lenient. Members respect clear boundaries more than they appreciate selective mercy.
 
-### Support other moderators publicly
+#### Support other moderators publicly
 If another moderator takes action, back them publicly. Disagreements happen in private. Never undermine each other in front of the community, it destroys mod-team credibility instantly.
 
-### No rehabilitation projects
+#### No rehabilitation projects
 You are not here to fix broken people or convince trolls to behave. Some people aren't ready for this space. That's fine, they can leave. Spending mod energy on individual reform projects burns out moderators and rarely works.
 
-## 7. Handling Pushback
+### 7. Handling Pushback
 
 When someone complains about a moderation decision, and they will, have a standard response ready:
 
@@ -134,7 +140,7 @@ When someone complains about a moderation decision, and they will, have a standa
 
 Then stop engaging. The longer the back-and-forth, the more the disruptor wins, regardless of who's "right."
 
-## 8. Moderator Self-Check Questions
+### 8. Moderator Self-Check Questions
 
 When you're hesitating to take action, ask yourself:
 
@@ -148,41 +154,41 @@ Your job is to protect the 99 good members from the one bad actor, not to give i
 
 ---
 
-# Part III: Technical Security Controls
+## Part III: Technical Security Controls
 
 > *"Specific settings vary by platform, but the principles are universal."*
 
-## 9. Platform Configuration Baseline
+### 9. Platform Configuration Baseline
 
-### Disable file uploads by default
+#### Disable file uploads by default
 File uploads are a primary vector for malware, disguised executables, and exploit-laden documents. Even well-meaning members can unknowingly share infected files.
 
 - Disable uploads for new and unverified members.
 - Allow uploads only for trusted roles, if at all.
 - Direct users to share via reputable link-based services instead.
 
-### Disable link embeds for general members
+#### Disable link embeds for general members
 Auto-loading link previews can expose IPs through tracking pixels, auto-load malicious content, and make fake login pages look legitimate.
 
 - Disable for the default role; enable only for verified or trusted members.
 - Document this in your community guidelines so members understand the reasoning.
 
-### Restrict channel/topic creation
+#### Restrict channel/topic creation
 Letting anyone create new channels is a vector for both confusion and intentional fragmentation. Restrict channel creation to moderators or above.
 
-### Bot permissions
+#### Bot permissions
 - Audit every bot in your space. Most need far less permission than they request.
 - Remove unused bots immediately. Each one is an attack surface.
 - Document what each bot does and why it's there.
 
-### Audit logging
+#### Audit logging
 - Turn on every available audit log.
 - If your platform offers limited retention, set up an external mirror.
 - Logs are the difference between handling an incident with facts and with feelings.
 
-## 10. Verification and Onboarding
+### 10. Verification and Onboarding
 
-### Tiered access
+#### Tiered access
 New accounts should never have the same access as established members. A tiered approach:
 
 - **Tier 0 (Unverified):** can read but not post. Sees only public channels.
@@ -191,7 +197,7 @@ New accounts should never have the same access as established members. A tiered 
 - **Tier 3 (Trusted):** moderator-vouched. Can hold support roles.
 - **Tier 4 (Operational):** moderators, admins, decision-makers.
 
-### Verification signals
+#### Verification signals
 When designing verification, combine multiple signals, no single one is reliable:
 
 - **Account age:** very new accounts on the platform warrant extra scrutiny.
@@ -201,18 +207,18 @@ When designing verification, combine multiple signals, no single one is reliable
 - **Activity patterns:** what other communities the account is in, how they post elsewhere.
 - **Application form:** an actual written application filters out a lot of low-effort disruptors.
 
-### Risk scoring rather than hard blocks
+#### Risk scoring rather than hard blocks
 Treat verification as a risk score, not a yes/no gate:
 
 - **Low risk:** automatic approval.
 - **Medium risk:** manual review by moderators.
 - **High risk:** additional verification required, or block.
 
-## 11. Behavioral Monitoring at Scale
+### 11. Behavioral Monitoring at Scale
 
 Once a community grows past a few hundred members, moderators can't read everything. You need tooling, but tooling is augmentation, not replacement.
 
-### What to track per user
+#### What to track per user
 - Total messages and rate of posting
 - Join date and first-message date
 - Day-by-day activity pattern
@@ -220,173 +226,173 @@ Once a community grows past a few hundred members, moderators can't read everyth
 - Who they reply to and who replies to them
 - Edit/deletion frequency
 
-### Red-flag combinations
+#### Red-flag combinations
 - **New account + extremely high first-day message volume:** either very engaged or coordinated.
 - **High volume + low diversity of recipients:** may be targeting specific members.
 - **Sudden activity spike from previously dormant account:** long-game persona activating.
 - **Multiple new accounts with similar fingerprints/IPs:** sockpuppeting.
 - **Coordinated timing across accounts:** external brigade or coordinated campaign.
 
-### Sentiment analysis limits
+#### Sentiment analysis limits
 Raw sentiment analysis is not enough for moderation. It misses sarcasm and context, fails on cultural variation, and treats heated-but-good-faith disagreement as toxic. Use sentiment as one signal among many, weighted lightly. Toxicity-specific models work better than general sentiment.
 
-### Transparency
+#### Transparency
 If you're analyzing member messages, say so in your community guidelines. Perceived surveillance without disclosure destroys trust faster than any disruptor could.
 
 ---
 
-# Part IV: Recognizing Disruption Patterns
+## Part IV: Recognizing Disruption Patterns
 
 > *"Naming a pattern is half of defeating it."*
 
-## 12. Bad-Faith Conversation Tactics
+### 12. Bad-Faith Conversation Tactics
 
-### Sealioning
+#### Sealioning
 Endless requests for evidence, definitions, or restatement, presented as polite curiosity but designed to exhaust the other person. The sealion never accepts any answer as sufficient. *Tell:* every response generates three more questions, none of which engage with the substance.
 
-### "Just Asking Questions" (JAQ)
+#### "Just Asking Questions" (JAQ)
 Asserting provocative claims by framing them as questions. "I'm just asking, is it really true that [inflammatory claim]?" Plausible deniability for inflammatory content.
 
-### Whataboutism
+#### Whataboutism
 Deflecting any criticism by pointing to a real or imagined parallel on the other side. Designed to make every discussion symmetrical, so no specific issue ever gets traction.
 
-### Strawmanning
+#### Strawmanning
 Restating someone's position in a weakened, distorted form, then attacking that distortion. The original speaker spends all their time correcting the misrepresentation instead of advancing their actual point.
 
-### Poisoning the well
+#### Poisoning the well
 Generalizations about an entire group based on its worst representatives. "Everyone on X side believes Y." Makes good-faith engagement impossible because every member of the maligned group has to start by defending themselves.
 
-### Sourceless bomb-throwing
+#### Sourceless bomb-throwing
 Dramatic claims with no evidence, made in a way that puts the burden of disproof on everyone else. Brandolini's law: the energy needed to refute nonsense is an order of magnitude larger than the energy needed to produce it.
 
-### Concern trolling
+#### Concern trolling
 Disguising attacks as concern. "I'm worried about the direction this group is heading", followed by undermining whatever direction the group is actually heading.
 
-### Conversation dominance
+#### Conversation dominance
 Always being first, loudest, and most frequent. The community's worldview gradually gets shaped by whoever talks most, regardless of merit.
 
-## 13. Movement Disruption Patterns
+### 13. Movement Disruption Patterns
 
 These patterns come from declassified counterintelligence records (notably the FBI's COINTELPRO program, 1956–1971) and post-Soviet research on "active measures." The techniques predate the internet, but they translate directly to online organizing.
 
-### Snitch-jacketing
+#### Snitch-jacketing
 Making a legitimate member appear to be the informant or saboteur. The disruptor spreads doubt about a trusted organizer, hoping the group will eject the real asset. If you see someone working hard to cast suspicion on a long-trusted member without solid evidence, that's the tell.
 
-### Bad-jacketing
+#### Bad-jacketing
 Framing a member as ideologically suspect, "not really one of us," politically unreliable. A purity-test attack designed to peel off committed members.
 
-### Provocateuring
+#### Provocateuring
 Pushing the group toward more extreme positions or actions, often by accusing others of being weak, sellouts, or cowards. In a political context: pushing for confrontational tactics, public attacks on rival groups, or purity tests that exclude moderates.
 
-### Schism cultivation
+#### Schism cultivation
 Always finding the wedge issue. Turning minor disagreements into existential ones. Relentlessly surfacing the most divisive sub-issues and then fueling the resulting fight.
 
-### Manufactured factionalism
+#### Manufactured factionalism
 Creating or amplifying subgroups that compete rather than collaborate. Channel/topic fragmentation is one online flavor. Cliques and rival camps are another.
 
-### Astroturfing
+#### Astroturfing
 Fake grassroots support. Multiple accounts that seem to independently agree but are coordinated. Watch for similar phrasing, identical timing, accounts that only appear together.
 
-### Sockpuppeting
+#### Sockpuppeting
 One person, multiple accounts. Used to manufacture consensus, harass while seeming to come from many directions, or evade bans.
 
-### The long-game persona
+#### The long-game persona
 An account that posts normally for months, builds genuine relationships, then activates when something important is being decided. The hardest pattern to detect because the account is "established" by the time it matters.
 
-## 14. Social Engineering and Infiltration
+### 14. Social Engineering and Infiltration
 
-### The credential flex
+#### The credential flex
 Heavily emphasizing impressive background early to fast-track trust. "I was on the call with [founder] before I even joined", establishing proximity to power as a substitute for actual time-in-community.
 
-### Urgency manufacture
+#### Urgency manufacture
 "We need to decide NOW," "we're losing momentum," "the window is closing." Pressures groups to bypass deliberation. Healthy organizations can almost always afford to slow down.
 
-### The favor ladder
+#### The favor ladder
 Small ask, then bigger, then bigger. Each accepted favor creates implicit obligation. Used to gradually escalate access.
 
-### Grievance cultivation
+#### Grievance cultivation
 Identifying members who feel slighted and amplifying their grievances. Lonely, ambitious, or recently rejected members are the targets. The disruptor offers validation in exchange for loyalty.
 
-### False intimacy
+#### False intimacy
 Excessive personal disclosure early to manufacture closeness, which then gets cashed in for trust and access.
 
-### Asymmetric information-gathering
+#### Asymmetric information-gathering
 Asks lots of questions, shares little. Watch for members who seem to want to know everything about how the organization works but reveal almost nothing about themselves.
 
-### Triangulation
+#### Triangulation
 Speaking for absent people. "A lot of people are saying…" "Members are concerned that…" Manufactures consensus that may not exist.
 
-### The two-faced post
+#### The two-faced post
 Supportive in main channels, critical in DMs or subgroups. Designed to build a hidden faction while maintaining public legitimacy.
 
-## 15. The Four Horsemen of Movement Collapse
+### 15. The Four Horsemen of Movement Collapse
 
 Across many failed movements, historically and recently, left and right, four patterns recur. Watching for all four is more useful than watching for any one.
 
-### Horseman 1: Founder displacement
+#### Horseman 1: Founder displacement
 A charismatic newcomer slowly positions to replace original leadership, usually by being "more pure" or "more effective" than the founders. The new figure builds loyalty through energy and availability while the founders look comparatively distant or slow.
 
-### Horseman 2: Mission drift
+#### Horseman 2: Mission drift
 The stated mission gets quietly broadened or shifted, usually toward whatever a disruptive faction cares about, until the original purpose is lost. Often happens through a thousand small "reasonable" expansions, none of which seem worth contesting in isolation.
 
-### Horseman 3: Resource capture
+#### Horseman 3: Resource capture
 Whoever controls the money, the platform, or the contact list ends up controlling the movement. Watch who volunteers for treasurer, admin, list-keeper roles. The mundane jobs are also the most powerful.
 
-### Horseman 4: Exhaustion of the committed
+#### Horseman 4: Exhaustion of the committed
 The original organizers burn out fighting fires that disruptors set. They leave. The disruptors inherit the structure. This is the most common ending, not a dramatic coup, but a quiet handover to whoever has the most stamina.
 
 ---
 
-# Part V: Structural Defenses
+## Part V: Structural Defenses
 
 > *"Trust earned in stages, not granted on arrival."*
 
-## 16. Tiered Trust Architecture
+### 16. Tiered Trust Architecture
 
 The single most important defense is making trust earned in stages rather than granted on arrival. The tiers from Section 10 should map to actual capability: what someone in Tier 1 can do is genuinely less than Tier 2, which is less than Tier 3.
 
 If your tiers are just labels with no real differences, they don't help. The point is that infiltration becomes much harder when high-trust access requires time, observed behavior, and moderator vouching.
 
-## 17. Decision-Making and Documentation
+### 17. Decision-Making and Documentation
 
-### Written records of decisions
+#### Written records of decisions
 Every significant decision should be written down: what was decided, by whom, when, why. Without written records, disruptors can gaslight the group about "what was actually agreed."
 
-### No solo decisions on sensitive matters
+#### No solo decisions on sensitive matters
 Bans of established members, changes to charter, financial decisions, role assignments: these require at least two moderators or admins. Not because individuals can't be trusted, but because two people are much harder to manipulate than one.
 
-### Decision-making cadence
+#### Decision-making cadence
 Have predictable, scheduled times when decisions get made. Disruptors thrive on emergencies and off-hours pressure. "We'll discuss it at the next weekly check-in" defuses most manufactured urgency.
 
-## 18. Founder and Vision Protection
+### 18. Founder and Vision Protection
 
 Founders are uniquely vulnerable to displacement because they're usually the ones doing the unglamorous work while charismatic newcomers do the visible work.
 
-### Explicit authority structure
+#### Explicit authority structure
 Be explicit, in writing, about who has final say on what. Vague structures get exploited. Clear ones get respected.
 
-### Succession planning
+#### Succession planning
 Document how leadership transitions happen. The absence of a plan is itself a vulnerability, it invites "someone needs to step up" arguments.
 
-### Founder protection norms
+#### Founder protection norms
 - New members don't get to challenge founding decisions in their first weeks.
 - Vision changes go through deliberate process, not casual proposals.
 - "Why did you decide X" gets one good-faith answer; "why is X still the rule" gets escalating skepticism the more times it's asked by the same person.
 
-## 19. Compartmentalization
+### 19. Compartmentalization
 
 Not every conversation belongs in the main community space.
 
-### Moderator-only channels
+#### Moderator-only channels
 Mod discussions, incident reviews, member concerns, and judgment calls happen in private. Not because there's something to hide, but because public mod debates undermine moderator authority and invite the very interference you're trying to prevent.
 
-### Trusted-member channels
+#### Trusted-member channels
 For higher-tier discussions where you need candor without the full audience. Be transparent that these exist; don't be transparent about their contents.
 
-### Off-platform sensitive discussions
+#### Off-platform sensitive discussions
 For genuinely sensitive matters (finances, legal questions, personnel), use channels you control more tightly than your community platform.
 
-### Periodic audits
+#### Periodic audits
 Every quarter or so, review:
 
 - Who has elevated permissions and whether they still need them.
@@ -396,11 +402,11 @@ Every quarter or so, review:
 
 ---
 
-# Part VI: Quick Reference
+## Part VI: Quick Reference
 
 > *"The parts moderators actually keep open while doing the work."*
 
-## 20. Red Flag Behavior Checklist
+### 20. Red Flag Behavior Checklist
 
 *None of these are conclusive on their own. Multiple together warrant moderator attention.*
 
@@ -421,7 +427,7 @@ Every quarter or so, review:
 | 13 | Activity concentrated at unusual hours that exclude others | Off-hours organizing |
 | 14 | Defends bad-faith actors with "hear them out" framing | Possible coordination |
 
-## 21. Pattern-to-Response Reference Card
+### 21. Pattern-to-Response Reference Card
 
 **Severity legend:** 🔴 Immediate removal · 🟡 Warning tier · 🟢 Observe & document
 
@@ -440,32 +446,32 @@ Every quarter or so, review:
 | 🔴 **Coordinated new accounts** | Hold all related accounts at Tier 0 pending review. Don't reveal the hold publicly. | **Block** the IP or fingerprint cluster. |
 | 🟢 **Long-game persona activating** | Treat the current behavior on its own merits. Do not let history excuse it. | **Apply standard escalation** as for a new user. |
 
-## 22. Templates for Common Situations
+### 22. Templates for Common Situations
 
-### Warning message
+#### Warning message
 > *"This behavior violates our community standard on [X]. This is your one warning. Continued behavior of this kind will result in removal."*
 
-### Removal notice
+#### Removal notice
 > *"Your post violated our rules on [X]. It has been removed. Further violations will result in a timeout or ban."*
 
-### Response to moderation pushback
+#### Response to moderation pushback
 > *"Our moderation decisions are final. If you have a genuine question about our rules, ask. If you're here to argue about enforcement, that's a distraction from our mission and will result in removal."*
 
-### Response to manufactured urgency
+#### Response to manufactured urgency
 > *"Thanks for raising this. Significant decisions get made at our regular check-ins, not in ad-hoc threads. We'll add this to the agenda for [next time]."*
 
-### Response to credential flex / fast-track request
+#### Response to credential flex / fast-track request
 > *"Welcome, we're glad you're here. Our community has the same access pathway for everyone regardless of background. As you spend time here and contribute, additional roles open up naturally. We're not in a rush; please don't be either."*
 
-### Response to triangulation
+#### Response to triangulation
 > *"Could you share which specific members have raised this? It's easier to address concerns when we can hear them directly rather than through summary."*
 
-### Public statement of moderation philosophy
+#### Public statement of moderation philosophy
 > *"This community exists for one purpose: [your mission]. We protect that mission decisively. We moderate based on behavior, not on who someone is or what they believe. If you're here to build, you're welcome. If you're here to disrupt, you won't last long."*
 
 ---
 
-# Appendix A: Adapting This Guidebook
+## Appendix A: Adapting This Guidebook
 
 This document is intentionally generic in places where your community will need specifics. Before using it, work through the following:
 
@@ -493,13 +499,13 @@ Quarterly is a good cadence. Communities evolve; this document should too.
 
 ---
 
-# Appendix B: Prior Art and Further Reading
+## Appendix B: Prior Art and Further Reading
 
 This guidebook stands on the shoulders of decades of work by activists, security researchers, trust & safety professionals, and community organizers. We are not the first people to think about this. We won't be the last. If anything here is useful, it is because of what came before.
 
 This appendix is partly an acknowledgment and partly a map: a guide to where to go deeper. Each tradition listed below approaches the problem from a different angle, and reading across them will make you a better moderator, organizer, or community steward than reading this guidebook alone.
 
-## The Activist Security Culture Tradition
+### The Activist Security Culture Tradition
 
 The closest spiritual ancestor of this guidebook. Born from the lived experience of organizers who watched their movements be infiltrated, disrupted, and dismantled, most famously through the FBI's COINTELPRO program (1956–1971), but the tradition continues to the present day. The activist security-culture literature is strongest on infiltration patterns, informants, internal trust, and how disruption actually feels from inside a movement.
 
@@ -511,7 +517,7 @@ The closest spiritual ancestor of this guidebook. Born from the lived experience
 
 **Caveat:** much of this literature is pitched at radical direct-action contexts and assumes state-level adversaries. The patterns translate, but the threat model may not match a typical online community.
 
-## The Trust & Safety Field
+### The Trust & Safety Field
 
 The professional discipline that has emerged over the past decade for operating large user-generated content platforms. Strongest on platform-level operations, policy design, enforcement workflows, and the operational realities of moderation at scale.
 
@@ -522,7 +528,7 @@ The professional discipline that has emerged over the past decade for operating 
 
 **Caveat:** most of this material is pitched at trust & safety teams *inside platforms*, companies like Discord-the-company, not a community *on Discord*. Useful for principles, less useful for direct application.
 
-## Digital Security and Surveillance Self-Defense
+### Digital Security and Surveillance Self-Defense
 
 How individuals and groups protect themselves against surveillance, data exposure, and digital adversaries. Essential reading for any community handling sensitive organizing or operating in environments where members face real risk.
 
@@ -530,7 +536,7 @@ How individuals and groups protect themselves against surveillance, data exposur
 - **EFF Security Education Companion**. Teaching materials for trainers introducing digital security to less-technical audiences.
 - **Access Now Digital Security Helpline**, 24/7 helpline for activists, journalists, and human rights defenders facing digital threats. *accessnow.org/help*
 
-## Codes of Conduct and Community Standards
+### Codes of Conduct and Community Standards
 
 The contract-language layer: how communities formally articulate what is and is not acceptable. This guidebook focuses on the *enforcement* side of community standards; codes of conduct are the *declaration* side. Both are needed.
 
@@ -539,7 +545,7 @@ The contract-language layer: how communities formally articulate what is and is 
 - **Django Code of Conduct**. A frequently-cited example tailored to a specific community.
 - **Open Source Guide on Codes of Conduct** (opensource.guide/code-of-conduct/). GitHub's practical guide to adopting and enforcing a code of conduct.
 
-## Academic and Research Resources
+### Academic and Research Resources
 
 For deeper background and ongoing research on platform governance, content moderation, and online community dynamics.
 
@@ -548,7 +554,7 @@ For deeper background and ongoing research on platform governance, content moder
 - **Stanford Internet Observatory**. Published influential work on platform integrity and information operations (note: organizational status has shifted; archived publications remain valuable).
 - **Custodians of the Internet** by Tarleton Gillespie (2018). Academic book on the labor and politics of content moderation.
 
-## Movement Disruption and Counterintelligence History
+### Movement Disruption and Counterintelligence History
 
 For understanding the patterns this guidebook describes in their historical context.
 
@@ -557,7 +563,7 @@ For understanding the patterns this guidebook describes in their historical cont
 - **FBI COINTELPRO records**. Available through the FBI Vault (vault.fbi.gov) and via FOIA-released collections at university libraries.
 - **Active Measures research**. Various studies on Soviet-era disruption operations, many of which describe techniques that translate directly to modern online influence operations.
 
-## Specific Platform Documentation
+### Specific Platform Documentation
 
 Generic principles only get you so far; eventually you have to configure actual settings on actual platforms.
 
@@ -565,7 +571,7 @@ Generic principles only get you so far; eventually you have to configure actual 
 - **Discord Safety Center** (discord.com/safety). Official policies and moderator resources.
 - **Slack Community Guidelines and Admin Documentation**. For Slack-based communities.
 
-## Why This Guidebook Exists Alongside All of That
+### Why This Guidebook Exists Alongside All of That
 
 If so much already exists, why another document?
 
@@ -593,7 +599,7 @@ This guidebook tries to bridge those traditions for that audience, and to put th
 
 If this guidebook does its job, it should make those four documents *more* useful to you, not less.
 
-## Contributing Back
+### Contributing Back
 
 If you adapt this guidebook, find what works, encounter situations it doesn't cover, or develop better approaches, share them back. The communities listed above (Activist Handbook, TSPA, All Tech Is Human) all accept contributions. The patterns in this document are not anyone's intellectual property; they belong to everyone who has fought to keep a mission-driven space alive.
 
