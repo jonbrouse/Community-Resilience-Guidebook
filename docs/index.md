@@ -1,8 +1,3 @@
----
-hide:
-  - navigation
----
-
 # The Community Resilience Guidebook
 
 *A field manual for protecting mission-driven communities from disruption and infiltration.*

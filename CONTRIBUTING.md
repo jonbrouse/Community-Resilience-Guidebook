@@ -39,11 +39,23 @@ Examples: `fix/appendix-b-link`, `add/manipulation-pattern`, `edit/moderation-ch
 ### 3. Set Up Local Preview (Optional but Recommended)
 
 ```bash
-pip install -r requirements.txt
-mkdocs serve
+make install   # creates .venv/ and installs dependencies
+make serve     # opens dev server at http://localhost:8000
 ```
 
-Open http://localhost:8000 to see your changes live as you edit. The site rebuilds on every save.
+Edits to `docs/index.md` reload the page automatically. The site rebuilds on every save.
+
+The first `make install` creates a Python virtual environment in `.venv/` (gitignored) so dependencies don't pollute your system Python. You don't need to activate it manually — the Makefile uses `.venv/bin/mkdocs` directly.
+
+Other useful targets:
+
+- `make build` — build the static site to `./site`
+- `make pdf` — build the PDF (requires pandoc + xelatex on your system)
+- `make all` — build both
+- `make clean` — remove build artifacts (keeps the venv)
+- `make clean-all` — remove build artifacts and the venv
+- `make reinstall` — wipe and rebuild the venv from scratch
+- `make help` — see all available targets
 
 ### 4. Make Your Changes
 

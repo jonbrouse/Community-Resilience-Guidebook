@@ -31,10 +31,10 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Read VERSION file
+      - name: Read version via make
         id: version
         run: |
-          VERSION=$(cat VERSION | tr -d '[:space:]')
+          VERSION=$(make version)
           echo "version=$VERSION" >> $GITHUB_OUTPUT
           echo "Releasing version: $VERSION"
 
@@ -62,26 +62,8 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y pandoc texlive-xetex texlive-fonts-recommended texlive-fonts-extra lmodern
 
-      - name: Substitute version
-        run: |
-          sed -i "s/{{VERSION}}/${{ needs.read-version.outputs.version }}/g" docs/index.md
-
-      - name: Build PDF
-        run: |
-          pandoc docs/index.md \
-            -o Community-Resilience-Guidebook.pdf \
-            --pdf-engine=xelatex \
-            --toc \
-            --toc-depth=2 \
-            -V geometry:margin=1in \
-            -V documentclass=article \
-            -V fontsize=11pt \
-            -V linkcolor=blue \
-            -V mainfont="DejaVu Serif" \
-            -V sansfont="DejaVu Sans" \
-            -V monofont="DejaVu Sans Mono" \
-            --metadata title="The Community Resilience Guidebook" \
-            --metadata subtitle="Version ${{ needs.read-version.outputs.version }}"
+      - name: Build PDF via make
+        run: make pdf
 
       - name: Upload PDF artifact
         uses: actions/upload-artifact@v5
@@ -105,19 +87,13 @@ jobs:
           cache: 'pip'
 
       - name: Install dependencies
-        run: |
-          pip install --upgrade pip
-          pip install -r requirements.txt
+        run: make install
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
 
-      - name: Substitute version
-        run: |
-          sed -i "s/{{VERSION}}/${{ needs.read-version.outputs.version }}/g" docs/index.md
-
-      - name: Build site
-        run: mkdocs build --strict
+      - name: Build site via make
+        run: make build
 
       - name: Download PDF artifact
         uses: actions/download-artifact@v5
@@ -125,8 +101,8 @@ jobs:
           name: guidebook-pdf
           path: ./
 
-      - name: Copy PDF into site output
-        run: cp Community-Resilience-Guidebook.pdf site/Community-Resilience-Guidebook.pdf
+      - name: Bundle PDF into site
+        run: make bundle-pdf-into-site
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3

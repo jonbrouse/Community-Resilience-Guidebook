@@ -79,6 +79,12 @@
 }
 */
 
+/* Hide the redundant page-title at the top of the left sidebar
+   (the site title is already shown in the header) */
+.md-nav--primary > .md-nav__title {
+  display: none;
+}
+
 /* Better hr in the middle of content */
 .md-typeset hr {
   margin: 2.5rem 0;

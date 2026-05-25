@@ -30,7 +30,7 @@ jobs:
         if: steps.content_changed.outputs.changed == 'true'
         run: |
           OLD_VERSION=$(git show origin/main:VERSION | tr -d '[:space:]')
-          NEW_VERSION=$(cat VERSION | tr -d '[:space:]')
+          NEW_VERSION=$(make version)
           echo "Old version: $OLD_VERSION"
           echo "New version: $NEW_VERSION"
           if [ "$OLD_VERSION" = "$NEW_VERSION" ]; then
@@ -52,26 +52,8 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y pandoc texlive-xetex texlive-fonts-recommended texlive-fonts-extra lmodern
 
-      - name: Substitute version
-        run: |
-          VERSION=$(cat VERSION | tr -d '[:space:]')
-          sed -i "s/{{VERSION}}/$VERSION/g" docs/index.md
-          echo "Built for version $VERSION"
-
-      - name: Build PDF
-        run: |
-          pandoc docs/index.md \
-            -o Community-Resilience-Guidebook.pdf \
-            --pdf-engine=xelatex \
-            --toc \
-            --toc-depth=2 \
-            -V geometry:margin=1in \
-            -V documentclass=article \
-            -V fontsize=11pt \
-            -V linkcolor=blue \
-            -V mainfont="DejaVu Serif" \
-            -V sansfont="DejaVu Sans" \
-            -V monofont="DejaVu Sans Mono"
+      - name: Build PDF via make
+        run: make pdf
 
       - name: Upload PDF as artifact (PR preview)
         uses: actions/upload-artifact@v5
@@ -94,14 +76,7 @@ jobs:
           cache: 'pip'
 
       - name: Install dependencies
-        run: |
-          pip install --upgrade pip
-          pip install -r requirements.txt
+        run: make install
 
-      - name: Substitute version
-        run: |
-          VERSION=$(cat VERSION | tr -d '[:space:]')
-          sed -i "s/{{VERSION}}/$VERSION/g" docs/index.md
-
-      - name: Build site (strict mode)
-        run: mkdocs build --strict
+      - name: Build site via make
+        run: make build

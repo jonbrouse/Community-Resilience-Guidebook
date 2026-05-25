@@ -11,9 +11,9 @@ site_description: >-
 site_author: The Community Resilience Guidebook contributors
 
 # IMPORTANT: update these after creating your GitHub repo
-site_url: https://jonbrouse.github.io/community-resilience-guidebook/
-repo_url: https://github.com/jonbrouse/community-resilience-guidebook
-repo_name: jonbrouse/community-resilience-guidebook
+site_url: https://YOUR-ORG.github.io/community-resilience-guidebook/
+repo_url: https://github.com/YOUR-ORG/community-resilience-guidebook
+repo_name: YOUR-ORG/community-resilience-guidebook
 edit_uri: edit/main/docs/
 
 # Copyright
@@ -27,6 +27,7 @@ copyright: >-
 # ============================================================
 theme:
   name: material
+  custom_dir: overrides
 
   # Sterile, minimal color palette
   palette:
@@ -56,19 +57,19 @@ theme:
     - navigation.instant            # Single-page app feel; faster
     - navigation.instant.progress   # Loading indicator
     - navigation.tracking           # URL updates on scroll
-    - navigation.top                # Back-to-top button
+    - navigation.sections           # Group sections in sidebar
+    - navigation.expand             # Auto-expand sidebar sections
+    - navigation.indexes            # Section index pages
     - navigation.footer             # Prev/next links at bottom
 
-    # Table of contents (right-side, follows scroll)
+    # Table of contents (in the left sidebar)
     - toc.follow
+    - toc.integrate           # Move TOC into the left sidebar
 
     # Search
     - search.suggest
     - search.highlight
     - search.share
-
-    # Header
-    - header.autohide               # Hide header on scroll
 
     # Content
     - content.code.copy             # Copy button on code blocks
@@ -95,7 +96,7 @@ markdown_extensions:
   - toc:
       permalink: true
       permalink_title: Anchor link to this section
-      toc_depth: 3
+      toc_depth: 2
 
   # PyMdown Extensions (better Markdown)
   - pymdownx.betterem
@@ -134,7 +135,7 @@ plugins:
 extra:
   social:
     - icon: fontawesome/brands/github
-      link: https://github.com/jonbrouse/community-resilience-guidebook
+      link: https://github.com/YOUR-ORG/community-resilience-guidebook
       name: GitHub
 
   # Show version in the footer
@@ -151,5 +152,5 @@ extra_css:
 # ============================================================
 # Single-page guidebook for now. If you split into multiple
 # pages later, add more entries here.
-#nav:
-#  - Guidebook: index.md
+nav:
+  - Guidebook: index.md

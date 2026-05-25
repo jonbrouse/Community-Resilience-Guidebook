@@ -15,8 +15,8 @@ It exists because most communities are built by people who care about a mission,
 
 ## Read It
 
-- **Web:** [Read the guidebook online](https://jonbrouse.github.io/community-resilience-guidebook/) *(replace with your Pages URL after deployment)*
-- **PDF:** [Download the latest PDF](https://jonbrouse.github.io/community-resilience-guidebook/Community-Resilience-Guidebook.pdf) *(updated automatically on release)*
+- **Web:** [Read the guidebook online](https://YOUR-ORG.github.io/community-resilience-guidebook/) *(replace with your Pages URL after deployment)*
+- **PDF:** [Download the latest PDF](https://YOUR-ORG.github.io/community-resilience-guidebook/Community-Resilience-Guidebook.pdf) *(updated automatically on release)*
 - **Markdown source:** [`docs/index.md`](./docs/index.md)
 
 ## What's Inside
@@ -34,11 +34,25 @@ It exists because most communities are built by people who care about a mission,
 To preview the site locally before opening a PR:
 
 ```bash
-pip install -r requirements.txt
-mkdocs serve
+make install   # creates .venv/ and installs dependencies
+make serve     # http://localhost:8000
 ```
 
-Open http://localhost:8000 in your browser. Edits to `docs/index.md` reload automatically.
+Edits to `docs/index.md` reload automatically.
+
+The first `make install` creates a Python virtual environment in `.venv/` (gitignored) so the project's dependencies stay isolated from your system Python.
+
+Other useful commands:
+
+```bash
+make build       # build the static site
+make pdf         # build just the PDF (needs pandoc + xelatex)
+make all         # build both
+make clean       # remove build artifacts
+make clean-all   # remove build artifacts and the venv
+make reinstall   # wipe and rebuild the venv from scratch
+make help        # see all available targets
+```
 
 ## Contributing
 
