@@ -27,7 +27,7 @@ jobs:
       tag_exists: ${{ steps.check_tag.outputs.exists }}
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
         with:
           fetch-depth: 0
 
@@ -55,7 +55,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: Install Pandoc and LaTeX
         run: |
@@ -84,7 +84,7 @@ jobs:
             --metadata subtitle="Version ${{ needs.read-version.outputs.version }}"
 
       - name: Upload PDF artifact
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v5
         with:
           name: guidebook-pdf
           path: Community-Resilience-Guidebook.pdf
@@ -96,10 +96,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: Setup Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v6
         with:
           python-version: '3.12'
           cache: 'pip'
@@ -110,7 +110,7 @@ jobs:
           pip install -r requirements.txt
 
       - name: Setup Pages
-        uses: actions/configure-pages@v4
+        uses: actions/configure-pages@v5
 
       - name: Substitute version
         run: |
@@ -120,7 +120,7 @@ jobs:
         run: mkdocs build --strict
 
       - name: Download PDF artifact
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v5
         with:
           name: guidebook-pdf
           path: ./
@@ -152,12 +152,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
         with:
           fetch-depth: 0
 
       - name: Download PDF artifact
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v5
         with:
           name: guidebook-pdf
           path: ./
