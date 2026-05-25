@@ -30,5 +30,5 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 - Appendix A: Adapting This Guidebook
 - Appendix B: Prior Art and Further Reading
 
-[Unreleased]: https://github.com/YOUR-ORG/community-resilience-guidebook/compare/v1.0.0...HEAD
-[1.0.0]: https://github.com/YOUR-ORG/community-resilience-guidebook/releases/tag/v1.0.0
+[Unreleased]: https://github.com/jonbrouse/community-resilience-guidebook/compare/v1.0.0...HEAD
+[1.0.0]: https://github.com/jonbrouse/community-resilience-guidebook/releases/tag/v1.0.0
