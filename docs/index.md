@@ -308,7 +308,7 @@ The test is the same as for every other pattern in this section: behavior agains
 
 This isn't an argument against humor. Humor between members in casual contexts is healthy and bonding. The pattern is specifically humor *deployed as a tactic* to provide cover, trivialize, or ridicule. Honest jokes don't need the cover; bad-faith content needs it badly.
 
-Some communities choose to disallow memes entirely as a structural defense, eliminating the deniability vector at the cost of some warmth. Others keep memes but apply the same mission-test to them as to anything else. Both are defensible. The choice belongs to the community when it defines its norms. The pattern to recognize either way is humor used to distract from, ridicule, or undermine the mission, not humor itself.
+Some communities choose to disallow memes entirely as a structural defense. This is the same logic as restricting channel creation in Section 9: it reduces the attack surface. Every meme posted in a meme-allowed community is one more piece of ambiguous-by-design content that a moderator has to evaluate against the mission test, often in real time, often without full context, often at the end of a long shift. The cognitive load adds up. A community that bans memes outright is not making an aesthetic choice. It's making an operational one: the mod team's attention is finite, and removing an entire category of plausibly-deniable content frees that attention for behavior that actually requires judgment. Other communities keep memes but apply the same mission-test to them as to anything else, accepting the cognitive load as part of the culture they want. Both are defensible. The choice belongs to the community when it defines its norms. The pattern to recognize either way is humor used to distract from, ridicule, or undermine the mission, not humor itself.
 
 ### 13. Movement Disruption Patterns
 
@@ -366,61 +366,31 @@ Supportive in main channels, critical in DMs or subgroups. Designed to build a h
 
 ### 15. Moderator Capture and Mod Drift
 
-The patterns in this Part target communities from the outside in. This one targets them from the inside out. It's the failure mode where the moderation team itself becomes a vector for disruption, either because someone hostile passed validation and now holds elevated access, or because honest moderators have drifted from disciplined pattern-recognition into reflexive hostility.
+Every pattern in this Part targets the community from the outside. This one targets it from the inside. It's the failure mode where the moderation team itself becomes the disruption vector, either because someone hostile passed validation and now holds elevated access, or because honest moderators have drifted from disciplined pattern-recognition into reflexive hostility. Both look similar from the community's side. The response is similar too.
 
-Both look similar from the community's side, which is the point. The response is similar too.
+#### Capture
+A patient, mission-fluent operator passes validation and obtains a moderator role. They now have visibility into mod-channel conversations, influence over borderline decisions, the ability to slow-walk actions against allies and accelerate actions against targets, and a platform from which "concern for the community" carries unusual weight. This isn't paranoid. It's structurally true of any role with elevated access in any organization.
 
-#### How mod capture happens
+#### Drift
+Honest moderators, tired from real bad actors, start applying pattern-recognition reflexively rather than carefully. The patterns are real and the training is real. What slips is the calibration between observed behavior and confident judgment.
 
-Validation works most of the time. It catches obvious bad actors, surfaces shaky accounts for manual review, and slows down the casual disruption. But validation isn't perfect. A patient, mission-fluent operator can pass it, especially the long-game persona described in Section 13. Once they have a moderator role, they have:
+#### Tells
+- Bans accelerating without a corresponding acceleration in clear-rule violations.
+- Borderline decisions consistently going one way.
+- A particular mod becoming the driver of most suspicion-based actions.
+- Mod-channel conversation becoming consistently more suspicious over time, with less curiosity and more certainty.
+- New moderator recruits chosen primarily for alignment with one existing mod rather than independent vouching.
+- Increasing scope of what counts as "violating the spirit of the rules" without a corresponding increase in clearly-written rules.
+- Members who try to raise concerns about moderator behavior being labeled as bad-faith actors and removed.
 
-- Visibility into mod-channel conversations
-- Influence over borderline decisions
-- The ability to slow-walk actions against allies and accelerate actions against targets
-- A platform from which "concern for the community" carries unusual weight
-- Knowledge of which members the rest of the mod team trusts most, which makes those trusted members the highest-value targets to undermine
-
-This isn't paranoid. It's structurally true of any role with elevated access in any organization.
-
-#### How mod drift happens
-
-Drift is more common than capture, and it doesn't require any bad actor. It happens when honest moderators get tired, get hurt by enough genuine bad actors, and start applying pattern-recognition reflexively rather than carefully. The patterns are real. The training is real. What slips is the calibration between observed behavior and confident judgment.
-
-Tells include:
-
-- Bans accelerating without a corresponding acceleration in clear-rule violations
-- "Borderline" decisions consistently going one way
-- A particular mod becoming the driver of most suspicion-based actions
-- Mod-channel conversation becoming consistently more suspicious over time, with less curiosity and more certainty
-- New moderator recruits being chosen primarily for alignment with one existing mod rather than independent vouching from multiple
-- Increasing scope of what counts as "violating the spirit of the rules" without a corresponding increase in clearly-written rules
-- Members who try to raise concerns about moderator behavior being labeled as bad-faith actors and removed
-
-That last one is the most important. A healthy moderation team can receive criticism without dissolving into debate, and can also distinguish criticism from bad-faith pushback. A drifted or captured team treats all internal criticism as evidence of disruption.
-
-#### Why this is genuinely hard to catch
-
-Every individual moderator action in a drifted team can look correct in isolation. The drift shows up only in the aggregate: trajectory, ratio, pattern over time. A single firm ban is good moderation. Twenty firm bans in three weeks while the community is otherwise quiet is data.
-
-The mod team is also the most insulated part of the community from feedback. Members who push back get labeled disruptors. Members who leave quietly don't leave a trail. The founder may be downstream of the mods and not see the pattern. The mods themselves are inside the pattern and can't see it.
+That last one is the most important. A healthy mod team can receive criticism without dissolving into debate, and can also distinguish criticism from bad-faith pushback. A drifted or captured team treats all internal criticism as evidence of disruption.
 
 #### Response
-
-The response is the same discipline that catches every other pattern in this guidebook, applied to the mod team itself:
-
-- **Documentation creates the trail.** If every moderator action is logged with rule, behavior, and rationale, the aggregate becomes visible later. A team that documents cannot drift invisibly. A team that doesn't document is already drifting.
-- **Second opinions on suspicion-based actions.** The doc already recommends two-mod minimums for sensitive matters. This is why. Clear-rule violations remain solo decisions. Anything where the justification is "pattern" rather than "rule" gets a second pair of eyes.
-- **Periodic review of recent actions.** Once a quarter, the mod team reviews the last quarter's suspicion-based actions together. Not to second-guess specific calls, but to look at the pattern in the aggregate. Is the trajectory healthy? Are the same names showing up? Are the violations clear-rule or pattern-call?
-- **External escalation paths.** If the suspicion involves a specific mod, the escalation goes to a non-implicated mod or to the founder, not to the implicated mod's allies. This needs to be documented before it's ever needed.
-- **Founder vigilance is part of the job.** Section 18 covers founder protection from displacement. The other half of that job is the founder watching the mod team for drift. The founder is the only role structurally positioned to see the aggregate without being inside the pattern.
-
-#### The hardest part
-
-Catching mod drift requires the mod team to apply this guidebook's discipline to itself. That's culturally hard. Moderators who have been fighting bad actors for months are tired and don't want to second-guess their own calls. They're right to be tired. They're also the team that, more than anyone else, needs to keep the discipline crisp.
-
-The fact that healthy moderation looks suspicious to bad-faith critics ("you're being too aggressive," "you're forming a clique") doesn't mean every accusation is bad-faith. Sometimes the accusation is correct and the accuser is honest. Distinguishing those cases is what the discipline in this whole guidebook is for. Apply it to yourselves the same way you apply it to anyone else.
+Apply the discipline of this guidebook to the mod team itself. Document every action with rule, behavior, and rationale so the aggregate becomes visible over time. Require second opinions on suspicion-based actions (clear-rule violations remain solo decisions). Review the quarter's suspicion-based actions together, looking at trajectory rather than individual calls. Establish escalation paths to non-implicated mods or the founder before they're ever needed. Section 18 covers founder protection from displacement. The other half of that job is the founder watching the mod team for drift.
 
 
+
+### 16. The Four Horsemen of Movement Collapse
 
 Across many failed movements, historically and recently, left and right, four patterns recur. Watching for all four is more useful than watching for any one.
 
