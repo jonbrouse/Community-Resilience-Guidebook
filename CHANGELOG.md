@@ -4,7 +4,7 @@ All notable changes to the Community Resilience Guidebook will be documented in 
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and this project follows a documentation-adapted [Semantic Versioning](https://semver.org/) convention. See [CONTRIBUTING.md](./CONTRIBUTING.md#versioning) for the rules.
 
-## [1.1.0]
+## [1.3.0]
 
 ### Added
 - Section 15: "Moderator Capture and Mod Drift" — a new pattern in Part IV covering insider mods who passed validation and honest mods whose pattern-recognition has drifted into reflexive hostility
