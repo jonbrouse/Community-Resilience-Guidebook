@@ -17,6 +17,16 @@ This guidebook is an attempt to put that knowledge somewhere the next person can
 
 Everything here is drawn from documented patterns: declassified counterintelligence records, published research on movement disruption, online community management literature, and lessons learned from communities that survived (and ones that didn't). Use what fits. Adapt what doesn't. Share it freely. See [Appendix B](#appendix-b-prior-art-and-further-reading) for the sources this builds on and where to read deeper.
 
+### What's Inside
+
+- **Part I: Foundations** lays out the core philosophy: a single mission test, acting on behavior rather than intent, and why patterns matter more than individual posts.
+- **Part II: The Moderation Charter** is the operational core. Immediate-removal offenses, warning-tier offenses, moderator rules of engagement, how to handle pushback, and self-check questions for when you're hesitating.
+- **Part III: Technical Security Controls** covers platform configuration: which settings to harden, how to design a tiered verification flow, and how to monitor behavior at scale without crossing into surveillance.
+- **Part IV: Recognizing Disruption Patterns** is the largest section, naming the specific tactics that show up in mission-driven communities. Bad-faith conversation tactics, movement-disruption patterns drawn from counterintelligence history, social engineering, the failure mode where moderators themselves become the disruption vector, and the four recurring patterns of movement collapse.
+- **Part V: Structural Defenses** is about the architecture of the community itself: tiered trust, decision-making and documentation, founder protection, and compartmentalization.
+- **Part VI: Quick Reference** is the part moderators actually keep open while doing the work. A red flag behavior checklist, a pattern-to-response card mapping observed behaviors to suggested responses, and templates for common moderator messages.
+- **Appendices** cover how to adapt this guidebook to your own community and a guide to prior art and further reading for anyone who wants to go deeper.
+
 ### How to Use This Document
 
 - Read it once cover-to-cover to understand the landscape.
@@ -26,7 +36,7 @@ Everything here is drawn from documented patterns: declassified counterintellige
 
 ### A Note on Tone
 
-This guidebook is direct because the work is serious. Moderating an active community is hard, often thankless, and occasionally adversarial. The framing here errs on the side of decisiveness over politeness, not because politeness doesn't matter, but because hesitation has killed more communities than firmness ever has.
+This guidebook is direct because the work is serious. Moderating an active community is hard, often thankless, and occasionally adversarial. The framing here errs on the side of decisiveness over politeness, not because politeness doesn't matter, but because in our observation hesitation is the more common failure mode. Communities tend to die slowly from accumulated tolerated behavior, not from a single overreach.
 
 That said: most strange behavior is not malicious. The frameworks here are designed to act on behavior, not on intent, so they work equally well for sabotage and for honest mistakes.
 
@@ -57,7 +67,7 @@ Before taking any moderation action, or letting one slide, ask:
 - **If it distracts:** act decisively.
 - **If you're unsure:** err on the side of protecting the community.
 
-This test outperforms detailed rulebooks because it forces you to think about the community's health rather than the technicalities of a violation. Rulebooks get gamed; mission tests don't.
+This test outperforms detailed rulebooks because it forces you to think about the community's health rather than the technicalities of a violation. Rulebooks get gamed routinely. Mission tests get gamed too, but more visibly: someone reframing disruption as "concern for the mission" is itself one of the patterns this guidebook teaches you to recognize (Section 12, concern trolling). The mission test isn't gameproof. It's just much harder to game without leaving a trail.
 
 ### 3. Acting on Behavior, Not Intent
 
@@ -69,6 +79,20 @@ If the behavior is harming the community, the appropriate response is the same r
 - **It's fair.** The same behavior gets the same response, whether from a friend or a stranger.
 
 Patterns matter more than individual posts. A single bad message from a long-time member is different from the same message from someone whose entire history is bad messages. Track patterns; act on patterns.
+
+### Why Vigilance and Openness Aren't Opposites
+
+A common worry about guidebooks like this one is that teaching moderators to recognize disruption patterns will make them suspicious of everyone, hostile to newcomers, and prone to seeing coordinated hostility in ordinary friction. The implicit framing is that moderation is a tightrope walk between two failure modes: too trusting on one side, too suspicious on the other.
+
+That framing is wrong. It treats vigilance and openness as opposing pulls that a good moderator has to balance. They aren't. They target different populations and they don't collide.
+
+Open, mission-aligned people don't trip the patterns in this guidebook. Genuine curiosity doesn't manufacture urgency. Honest disagreement doesn't speak for absent members. New contributors with real enthusiasm don't push for sensitive roles within days of joining while accusing existing leadership of forming a clique. Awkwardness, neurodivergence, cultural difference, language barriers, strong personalities, intense enthusiasm: none of these produce the specific behavioral signatures named in Part IV. The patterns are what bad-faith engagement *requires* to function. Honest engagement doesn't need them, doesn't accidentally produce them, and isn't caught by them.
+
+This means a healthy community can be extremely welcoming and extremely consistent about enforcement at the same time. The two traits target different populations. The welcome is for anyone whose behavior reflects honest engagement, which is the vast majority of people. The enforcement is for the specific behaviors that disrupt mission-driven work, which a small number of people exhibit and which are recognizable when you know what to look for.
+
+The discipline is consistency, not balance. A moderator applying this guidebook well isn't navigating between too-trusting and too-suspicious. They're noticing patterns and acting on them, the same way every time, regardless of who's doing the behavior. That consistency is what makes a community feel safe to honest newcomers and unwelcoming to bad actors at the same time.
+
+If you find yourself worrying that the mod team has drifted into reflexive hostility, that worry is itself useful information. There's a pattern for it in Section 15. Apply the discipline to yourselves the same way you apply it to anyone else.
 
 ---
 
@@ -113,7 +137,7 @@ When issuing warnings or bans, be clear and direct:
 Soft language reads as uncertainty, which invites argument. Clear language closes the loop.
 
 #### Trust your gut
-If something feels off, it probably is. You don't need ironclad proof of bad faith to act. The mission-test is sufficient justification.
+Your gut is doing pattern-recognition from this guidebook faster than your conscious mind can articulate. When something feels off, that's the patterns firing. Act on it. You don't need to write up which specific pattern you spotted before you remove a message or end a conversation. The test was always behavior against mission, and your gut is reading behavior. A trained gut isn't raw intuition; it's compressed experience. The point of this guidebook is to compress that experience faster than you'd otherwise get it.
 
 #### Document, don't debate
 Keep a moderator log of every action taken: user, behavior, action, rationale. You don't owe bad actors a philosophical discussion about their removal. State the reason once, then disengage.
@@ -155,6 +179,10 @@ Your job is to protect the 99 good members from the one bad actor, not to give i
 
 ### 9. Platform Configuration Baseline
 
+The principle underlying everything in this section is simple: **reduce attack surface**. Every feature your community platform offers is a potential vector for abuse, accidental harm, or operational risk. Some are worth the tradeoff; many aren't. The defaults that platforms ship with are tuned for maximum engagement, not maximum safety, so a healthy community typically runs with several defaults disabled.
+
+Think of it like the difference between locking your front door and not locking it. Most people who walk past won't try the handle, but the lock isn't there for them. It's there to make the rare bad actor's job harder. Every setting below is a lock.
+
 #### Disable file uploads by default
 File uploads are a primary vector for malware, disguised executables, and exploit-laden documents. Even well-meaning members can unknowingly share infected files.
 
@@ -169,7 +197,7 @@ Auto-loading link previews can expose IPs through tracking pixels, auto-load mal
 - Document this in your community guidelines so members understand the reasoning.
 
 #### Restrict channel/topic creation
-Letting anyone create new channels is a vector for both confusion and intentional fragmentation. Restrict channel creation to moderators or above.
+Letting anyone create new channels is a vector for both confusion and intentional fragmentation, and it expands the moderated surface area beyond what your mod team can realistically watch. Each new channel is another place where bad behavior can take root unnoticed. Restrict channel creation to moderators or above. If a member has a genuine need for a new channel, they can ask, and the request itself becomes a useful data point about what the community actually wants.
 
 #### Bot permissions
 - Audit every bot in your space. Most need far less permission than they request.
@@ -266,6 +294,22 @@ Disguising attacks as concern. "I'm worried about the direction this group is he
 #### Conversation dominance
 Always being first, loudest, and most frequent. The community's worldview gradually gets shaped by whoever talks most, regardless of merit.
 
+#### Memes and trivialization
+
+Memes are images, formats, and references that compress an idea into a shareable joke. In healthy communities they're harmless and often bonding. As a disruption tactic, they exploit the same plausible-deniability dynamic as "just asking questions." A meme that wouldn't survive being stated plainly gets posted with the implicit defense "it's just a joke," and calling it out makes the moderator look uptight or no-fun.
+
+The pattern shows up in three common forms:
+
+- **Trivializing reframes** that recast serious topics as bits, gradually shifting the community's default register from substantive to ironic. Over time, mission-focused work starts to feel cringe and earnest contributors get socially punished.
+- **Deniable provocation** that smuggles in framings, slurs, or attacks under the cover of irony. The content is the content. The joke wrapper doesn't change what was said, only what the poster can claim if challenged.
+- **Pattern ridicule** that mocks moderators or serious members for naming disruption patterns, reframing pattern-recognition itself as humorless paranoia.
+
+The test is the same as for every other pattern in this section: behavior against mission. A meme that wouldn't survive being stated plainly gets removed the same as if it had been stated plainly. The "it's just a joke" appeal is itself a tell. The job of moderation isn't to adjudicate whether something was technically a joke. It's to notice when the joke wrapper is doing work the underlying content couldn't do on its own.
+
+This isn't an argument against humor. Humor between members in casual contexts is healthy and bonding. The pattern is specifically humor *deployed as a tactic* to provide cover, trivialize, or ridicule. Honest jokes don't need the cover; bad-faith content needs it badly.
+
+Some communities choose to disallow memes entirely as a structural defense. This is the same logic as restricting channel creation in Section 9: it reduces the attack surface. Every meme posted in a meme-allowed community is one more piece of ambiguous-by-design content that a moderator has to evaluate against the mission test, often in real time, often without full context, often at the end of a long shift. The cognitive load adds up. A community that bans memes outright is not making an aesthetic choice. It's making an operational one: the mod team's attention is finite, and removing an entire category of plausibly-deniable content frees that attention for behavior that actually requires judgment. Other communities keep memes but apply the same mission-test to them as to anything else, accepting the cognitive load as part of the culture they want. Both are defensible. The choice belongs to the community when it defines its norms. The pattern to recognize either way is humor used to distract from, ridicule, or undermine the mission, not humor itself.
+
 ### 13. Movement Disruption Patterns
 
 These patterns come from declassified counterintelligence records (notably the FBI's COINTELPRO program, 1956–1971) and post-Soviet research on "active measures." The techniques predate the internet, but they translate directly to online organizing.
@@ -320,7 +364,33 @@ Speaking for absent people. "A lot of people are saying…" "Members are concern
 #### The two-faced post
 Supportive in main channels, critical in DMs or subgroups. Designed to build a hidden faction while maintaining public legitimacy.
 
-### 15. The Four Horsemen of Movement Collapse
+### 15. Moderator Capture and Mod Drift
+
+Every pattern in this Part targets the community from the outside. This one targets it from the inside. It's the failure mode where the moderation team itself becomes the disruption vector, either because someone hostile passed validation and now holds elevated access, or because honest moderators have drifted from disciplined pattern-recognition into reflexive hostility. Both look similar from the community's side. The response is similar too.
+
+#### Capture
+A patient, mission-fluent operator passes validation and obtains a moderator role. They now have visibility into mod-channel conversations, influence over borderline decisions, the ability to slow-walk actions against allies and accelerate actions against targets, and a platform from which "concern for the community" carries unusual weight. This isn't paranoid. It's structurally true of any role with elevated access in any organization.
+
+#### Drift
+Honest moderators, tired from real bad actors, start applying pattern-recognition reflexively rather than carefully. The patterns are real and the training is real. What slips is the calibration between observed behavior and confident judgment.
+
+#### Tells
+- Bans accelerating without a corresponding acceleration in clear-rule violations.
+- Borderline decisions consistently going one way.
+- A particular mod becoming the driver of most suspicion-based actions.
+- Mod-channel conversation becoming consistently more suspicious over time, with less curiosity and more certainty.
+- New moderator recruits chosen primarily for alignment with one existing mod rather than independent vouching.
+- Increasing scope of what counts as "violating the spirit of the rules" without a corresponding increase in clearly-written rules.
+- Members who try to raise concerns about moderator behavior being labeled as bad-faith actors and removed.
+
+That last one is the most important. A healthy mod team can receive criticism without dissolving into debate, and can also distinguish criticism from bad-faith pushback. A drifted or captured team treats all internal criticism as evidence of disruption.
+
+#### Response
+Apply the discipline of this guidebook to the mod team itself. Document every action with rule, behavior, and rationale so the aggregate becomes visible over time. Require second opinions on suspicion-based actions (clear-rule violations remain solo decisions). Review the quarter's suspicion-based actions together, looking at trajectory rather than individual calls. Establish escalation paths to non-implicated mods or the founder before they're ever needed. Section 18 covers founder protection from displacement. The other half of that job is the founder watching the mod team for drift.
+
+
+
+### 16. The Four Horsemen of Movement Collapse
 
 Across many failed movements, historically and recently, left and right, four patterns recur. Watching for all four is more useful than watching for any one.
 
@@ -342,13 +412,13 @@ The original organizers burn out fighting fires that disruptors set. They leave.
 
 > *"Trust earned in stages, not granted on arrival."*
 
-### 16. Tiered Trust Architecture
+### 17. Tiered Trust Architecture
 
 The single most important defense is making trust earned in stages rather than granted on arrival. The tiers from Section 10 should map to actual capability: what someone in Tier 1 can do is genuinely less than Tier 2, which is less than Tier 3.
 
 If your tiers are just labels with no real differences, they don't help. The point is that infiltration becomes much harder when high-trust access requires time, observed behavior, and moderator vouching.
 
-### 17. Decision-Making and Documentation
+### 18. Decision-Making and Documentation
 
 #### Written records of decisions
 Every significant decision should be written down: what was decided, by whom, when, why. Without written records, disruptors can gaslight the group about "what was actually agreed."
@@ -359,7 +429,7 @@ Bans of established members, changes to charter, financial decisions, role assig
 #### Decision-making cadence
 Have predictable, scheduled times when decisions get made. Disruptors thrive on emergencies and off-hours pressure. "We'll discuss it at the next weekly check-in" defuses most manufactured urgency.
 
-### 18. Founder and Vision Protection
+### 19. Founder and Vision Protection
 
 Founders are uniquely vulnerable to displacement because they're usually the ones doing the unglamorous work while charismatic newcomers do the visible work.
 
@@ -374,7 +444,7 @@ Document how leadership transitions happen. The absence of a plan is itself a vu
 - Vision changes go through deliberate process, not casual proposals.
 - "Why did you decide X" gets one good-faith answer; "why is X still the rule" gets escalating skepticism the more times it's asked by the same person.
 
-### 19. Compartmentalization
+### 20. Compartmentalization
 
 Not every conversation belongs in the main community space.
 
@@ -401,7 +471,7 @@ Every quarter or so, review:
 
 > *"The parts moderators actually keep open while doing the work."*
 
-### 20. Red Flag Behavior Checklist
+### 21. Red Flag Behavior Checklist
 
 *None of these are conclusive on their own. Multiple together warrant moderator attention.*
 
@@ -422,7 +492,7 @@ Every quarter or so, review:
 | 13 | Activity concentrated at unusual hours that exclude others | Off-hours organizing |
 | 14 | Defends bad-faith actors with "hear them out" framing | Possible coordination |
 
-### 21. Pattern-to-Response Reference Card
+### 22. Pattern-to-Response Reference Card
 
 **Severity legend:** 🔴 Immediate removal · 🟡 Warning tier · 🟢 Observe & document
 
@@ -441,7 +511,7 @@ Every quarter or so, review:
 | 🔴 **Coordinated new accounts** | Hold all related accounts at Tier 0 pending review. Don't reveal the hold publicly. | **Block** the IP or fingerprint cluster. |
 | 🟢 **Long-game persona activating** | Treat the current behavior on its own merits. Do not let history excuse it. | **Apply standard escalation** as for a new user. |
 
-### 22. Templates for Common Situations
+### 23. Templates for Common Situations
 
 #### Warning message
 > *"This behavior violates our community standard on [X]. This is your one warning. Continued behavior of this kind will result in removal."*
@@ -570,13 +640,7 @@ Generic principles only get you so far; eventually you have to configure actual 
 
 If so much already exists, why another document?
 
-**First, because the knowledge isn't reaching the people who need it.** A lot of people want to get organized. They start communities, launch advocacy groups, build coalitions, and then they get decimated by bad actors and quit. Not because they didn't care. Not because they weren't trying. Because they didn't know how, and the existing resources are scattered across worlds most newcomers don't even know to look in.
-
-The activist security handbooks live in zine distros and anarchist libraries. The trust & safety curriculum lives behind professional-association framing that reads as "for tech industry employees." The academic research lives in journals. The platform docs assume you already know what you're trying to defend against. Someone starting their first community Discord doesn't know any of this exists, and by the time they figure out something is wrong, they've already lost the people who would have made the community thrive.
-
-The failure mode isn't apathy. It's that organizing in 2025 means walking into a fight against bad-faith actors who have studied how to break communities, while the defenders are learning on the job in real time, in public, with their reputations on the line. Most people lose that fight once and never try again. That's the actual cost, not the communities that got destroyed, but the people who walked away from organizing entirely because they got hurt the first time.
-
-**Second, because the existing resources sit in separate worlds that rarely talk to each other:**
+Because the existing resources sit in separate worlds that rarely talk to each other, and none of them speaks directly to the people who need this knowledge most:
 
 - The **activist security tradition** is strong on infiltration and disruption patterns but pitched at radical/clandestine contexts.
 - The **trust & safety field** is strong on platform operations but pitched at companies running platforms, not communities living on them.
@@ -585,7 +649,7 @@ The failure mode isn't apathy. It's that organizing in 2025 means walking into a
 
 A mid-size mission-driven community (an advocacy group's Discord, a civic forum, a volunteer coalition's Slack, an activist coordination space) needs to defend against *all* of these threats simultaneously, using *normal platform tools*, with *volunteer moderators*, on a *small budget*, often while doing the actual organizing work that the community exists for in the first place.
 
-This guidebook tries to bridge those traditions for that audience, and to put the knowledge somewhere the next person can actually find it. It is not a replacement for any of the resources above. Anyone serious about this work should read at minimum:
+This guidebook tries to bridge those traditions for that audience. It is not a replacement for any of the resources above. Anyone serious about this work should read at minimum:
 
 1. **Security Culture: A Handbook for Activists**, for the infiltration mindset.
 2. **The TSPA Curriculum**, for the operations mindset.

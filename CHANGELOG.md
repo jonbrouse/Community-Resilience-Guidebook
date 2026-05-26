@@ -4,20 +4,23 @@ All notable changes to the Community Resilience Guidebook will be documented in 
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and this project follows a documentation-adapted [Semantic Versioning](https://semver.org/) convention. See [CONTRIBUTING.md](./CONTRIBUTING.md#versioning) for the rules.
 
-## [Unreleased]
+## [1.3.0]
 
 ### Added
-- (nothing yet)
+- Section 15: "Moderator Capture and Mod Drift" — a new pattern in Part IV covering insider mods who passed validation and honest mods whose pattern-recognition has drifted into reflexive hostility
+- New pattern in Section 12: "Memes and trivialization" covering humor-as-tactic, the cognitive-load cost of meme-allowed communities, and explicit framing that the meme policy itself is a community-level operational choice tied to the attack-surface principle from Section 9
+- New Part I closing subsection: "Why Vigilance and Openness Aren't Opposites"
 
 ### Changed
-- (nothing yet)
-
-### Fixed
-- (nothing yet)
+- "Trust your gut" rewritten to clarify that "gut" means trained pattern-recognition from this guidebook
+- Two aphorisms softened to drop unprovable certainty without changing direction
+- Appendix B's "Why This Guidebook Exists Alongside All of That" trimmed to remove duplication with the About section
+- "What's Inside" overview updated to reflect Section 15
+- Sections 16-23 renumbered (formerly 15-22) to make room for Moderator Capture
 
 ---
 
-## [1.0.0] - 2026-05-25
+## [1.0.0]
 
 ### Added
 - Initial release of the Community Resilience Guidebook
@@ -29,6 +32,3 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 - Part VI: Quick Reference (red flag checklist, pattern-to-response card, message templates)
 - Appendix A: Adapting This Guidebook
 - Appendix B: Prior Art and Further Reading
-
-[Unreleased]: https://github.com/jonbrouse/community-resilience-guidebook/compare/v1.0.0...HEAD
-[1.0.0]: https://github.com/jonbrouse/community-resilience-guidebook/releases/tag/v1.0.0
