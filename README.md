@@ -15,8 +15,8 @@ It exists because most communities are built by people who care about a mission,
 
 ## Read It
 
-- **Web:** [Read the guidebook online](https://YOUR-ORG.github.io/community-resilience-guidebook/) *(replace with your Pages URL after deployment)*
-- **PDF:** [Download the latest PDF](https://YOUR-ORG.github.io/community-resilience-guidebook/Community-Resilience-Guidebook.pdf) *(updated automatically on release)*
+- **Web:** [Read the guidebook online](https://jonbrouse.github.io/community-resilience-guidebook/)
+- **PDF:** [Download the latest PDF](https://jonbrouse.github.io/community-resilience-guidebook/Community-Resilience-Guidebook.pdf)
 - **Markdown source:** [`docs/index.md`](./docs/index.md)
 
 ## What's Inside
